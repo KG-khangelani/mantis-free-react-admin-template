@@ -11,8 +11,8 @@ import { RiseOutlined, FallOutlined } from '@ant-design/icons';
 
 // ==============================|| STATISTICS - ECOMMERCE CARD  ||============================== //
 
-const AnalyticEcommerce = ({ color, title, count, percentage, isLoss, extra }) => (
-  <MainCard contentSX={{ p: 2.25 }}>
+export const AnalyticEcommerce = ({ color, title, count, percentage, isLoss, extra, ...props }) => (
+  <MainCard contentSX={{ p: 2.25 }} {...props}>
     <Stack spacing={0.5}>
       <Typography variant="h6" color="textSecondary">
         {title}
@@ -64,7 +64,11 @@ AnalyticEcommerce.propTypes = {
 };
 
 AnalyticEcommerce.defaultProps = {
-  color: 'primary'
+  color: 'primary',
+  count: 10,
+  title: 'This is default',
+  percentage: 100,
+  extra: `Sure`,
 };
 
 export default AnalyticEcommerce;
